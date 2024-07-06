@@ -11,6 +11,7 @@ def preprocess_data(data):
     Returns:
     tuple: Processed training, validation, and test datasets.
     """
+    
     # Split the training set into validation and training sets
     val_size = 10000
     train_x, val_x, train_y, val_y = train_test_split(data[0], data[1], test_size=val_size, random_state=42, shuffle=True)
