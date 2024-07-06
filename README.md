@@ -5,15 +5,13 @@ LeNet-5 [LeCun et al., 1998]
 
 ## Table of Contents
 <ul>
-<li><a href="#References">References</a></li>
-<li><a href="#Dataset">Dataset</a></li>
+<li><a href="#running-the-project">Running the Project</a></li>
+<li><a href="#directory-structure">Directory Structure</a></li>
+<li><a href="#dataset">Dataset</a></li>
+<li><a href="#lenet-5-model">LeNet-5 Model</a></li>
+<li><a href="#utilities">Utilities</a></li>
+<li><a href="#references">References</a></li>
 </ul>
-- [Running the Project](#running-the-project)
-- [Directory Structure](#directory-structure)
-- [Dataset](#dataset)
-- [LeNet-5 Model](#lenet-5-model)
-- [Utilities](#utilities)
-- [References](#references)
 
 ## Running the Project
 1. Clone the repository:
