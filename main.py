@@ -10,8 +10,8 @@ from sklearn.metrics import confusion_matrix
 
 import sys
 sys.path.append('/Users/alessioguarachi/Desktop/Python codes')
-from DL_models.utils_DL import plot_history,show_confusion_matrix
-from Images.utils_Images import Image_inspection
+from utils.utils_DL import plot_history,show_confusion_matrix
+from utils.utils_Images import Image_inspection
 
 # Upload of a dataset, in example ther MNIST
 (data_train_x,data_train_y), (data_test_x,data_test_y) = keras.datasets.mnist.load_data()
