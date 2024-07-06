@@ -1,6 +1,5 @@
 # Deep-Learning
-The repository contains a project that uses deep learning to 
-LeNet-5 [LeCun et al., 1998]
+This repository showcases a deep learning project implementing the LeNet-5 architecture [LeCun et al., 1998]. The project utilizes the MNIST dataset to demonstrate LeNet-5's effectiveness in image classification.
 
 
 ## Table of Contents
