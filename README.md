@@ -1,4 +1,4 @@
-# Deep-Learning
+# Deep-Learning project
 This repository showcases a deep learning project implementing the LeNet-5 architecture [LeCun et al., 1998]. The project utilizes the MNIST dataset to demonstrate LeNet-5's effectiveness in image classification.
 
 
@@ -46,7 +46,7 @@ Deep-Learning/
 └── README.md
 ```
 
-# Dataset
+## Dataset
 The project uses the [MNIST dataset](http://yann.lecun.com/exdb/mnist/), which is automatically downloaded when running the scripts or notebooks.
 
 ## LeNet-5 Model
@@ -61,5 +61,5 @@ The utility functions help in visualizing the training process and evaluating th
 - `show_confusion_matrix(conf_matrix, class_names)`: Displays the confusion matrix with class labels.
 - `Image_inspection(data)`: Displays 10 random images from the dataset.
 
-# References
+## References
 [1] Y. LeCun, L. Bottou, Y. Bengio, and P. Haffner. "Gradient-based learning applied to document recognition." Proceedings of the IEEE, 86(11):2278-2324, November 1998
