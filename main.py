@@ -9,8 +9,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 
 import sys
-sys.path.append('/Users/alessioguarachi/Desktop/Python codes')# I have to specify where is the workspace
-from DL_models.utils_DL import plot_history,show_confusion_matrix  #I have to define the folder and the name of the python file and related modules
+sys.path.append('/Users/alessioguarachi/Desktop/Python codes')
+from DL_models.utils_DL import plot_history,show_confusion_matrix
 from Images.utils_Images import Image_inspection
 
 # Upload of a dataset, in example ther MNIST
@@ -62,37 +62,11 @@ if train_x.shape[1]<32 or train_x.shape[2]<32: #in train_x.shape[0] we have the 
   print('Validation shape: ',val_x.shape)
   print('Test shape: ',test_x.shape)
 
-
-# (LeNet-5) Convolutional Neural Network that is able to classify the MNIST dataset
-def build_lenet5(input_shape=(32, 32, 1),output_class_count=10):
-    model=keras.Sequential(
-            [
-                layers.Input(shape=input_shape,name='Input'),
-                layers.Conv2D(filters=6, kernel_size=5, strides=1,activation='tanh',padding='valid',name='C1'),
-                layers.AvgPool2D(pool_size=2, strides=2,name='S2'),
-                
-                layers.Conv2D(filters=16, kernel_size=5,strides=1,activation='tanh',padding='valid',name='C3'),
-                layers.AvgPool2D(pool_size=2, strides=2,name='S4'),
-                
-                layers.Conv2D(filters=120, kernel_size=5,strides=1,activation='tanh',padding='valid',name='C5'),
-                
-                layers.Flatten(), #in order to obtain a vector
-                
-                layers.Dense(84, activation='tanh',name='F6'),
-                
-                layers.Dense(units=output_class_count,activation='softmax',name='Output')
-                
-                # Softmax -> per avere probabilità in output
-            ]
-        )
-    return model
-
-
-
-# Train the model
+# Build and compile the model
 model=build_lenet5()
 model.summary()
 
+# Train the model
 model.compile(optimizer='adam',loss='sparse_categorical_crossentropy',metrics=['accuracy'])
 history=model.fit(train_x,train_y,epochs=10,batch_size=64,validation_data=(val_x,val_y))
 
@@ -108,13 +82,6 @@ print('Test accuracy: ',test_accuracy)
 y_pred=model.predict(test_x)
 y_pred=np.argmax(y_pred,axis=1)
 show_confusion_matrix(test_y,y_pred,class_names)
-
-#Save the model
-model.save('lenet5.h5')
-
-#Load the model
-model=keras.models.load_model('lenet5.h5')
-model.summary()
 
 #Prediction
 index=0
