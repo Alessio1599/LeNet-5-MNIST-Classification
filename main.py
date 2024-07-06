@@ -97,10 +97,6 @@ def main():
   #Show the image
   plt.imshow(image[0,:,:,0],cmap='gray')
   plt.show()
-  
-  
-  # Show the filters of the first layer
-  layer=model.get_layer('C1')
 
 if __name__ == '__main__':
     main()
