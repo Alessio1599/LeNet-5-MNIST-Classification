@@ -25,6 +25,7 @@ LeNet-5 [LeCun et al., 1998]
     ```
 
 ## Directory structure
+```
 Deep-Learning/
 │
 ├── models/
@@ -40,7 +41,7 @@ Deep-Learning/
 ├── main.py
 ├── requirements.txt
 └── README.md
-
+```
 
 # Dataset
 The project uses the [MNIST dataset](http://yann.lecun.com/exdb/mnist/), which is automatically downloaded when running the scripts or notebooks.
