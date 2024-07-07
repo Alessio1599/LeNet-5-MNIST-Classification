@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def plot_history(history,metric=None):
+  """
+  Draws in a graph the loss trend over epochs on both training and validation sets. Moreover, if provided, it draws in the same graph also the trend of the given metric.
+  """
   fig, ax1 = plt.subplots(figsize=(10, 8))
 
   epoch_count=len(history.history['loss'])
