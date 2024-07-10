@@ -1,5 +1,5 @@
-numpy
-matplotlib
-tensorflow
-keras
-scikit-learn
+numpy==
+matplotlib==
+tensorflow==
+keras==
+scikit-learn==
