@@ -15,8 +15,8 @@ This repository showcases a deep learning project implementing the LeNet-5 archi
 ## Running the Project
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Alessio1599/Deep-Learning.git
-    cd Deep-Learning
+    git clone https//github.com/Alessio1599/LeNet-5-MNIST-Classification.git
+    cd LeNet-5-MNIST-Classification
     ```
 2. Install required packages:
     ```bash
