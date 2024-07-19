@@ -37,12 +37,22 @@ def train_model(train_x, train_y, val_x, val_y):
 
   model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
   # Train the model
-  history = model.fit(train_x, train_y, epochs=10, batch_size=64, validation_data=(val_x, val_y))
+  history = model.fit(train_x, train_y, epochs=5, batch_size=64, validation_data=(val_x, val_y), verbose=1)
   
   # Plot of the training history
   plot_history(history)
 
   return model
+
+def print_training_summary(history):
+  """
+  Prints the training summary including the hyperparameters and the loss function.
+  """
+  print("\nTraining Summary:")
+  print(f"Number of epochs: {len(history.epoch)}")
+  print(f"Batch size: {history.params['batch_size']}")
+  print(f"Optimizer: {history.model.optimizer._name}")
+  print(f"Loss function: {history.model.loss}")
 
 def evaluate_model(model, test_x, test_y, class_names):
   # Evaluation of the model

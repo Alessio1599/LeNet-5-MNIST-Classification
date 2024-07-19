@@ -52,11 +52,13 @@ def preprocess_data(data):
 
     return train_x, val_x, test_x, train_y, val_y, test_y
 
-def inspect_data(Images,class_names): 
+def inspect_data(Images, data_train_y, class_names): 
     """This function visualizes 10 random images from the given dataset.
 
     Args:
-        dataset (numpy.ndarray): A numpy array containing image data.
+        Images (numpy.ndarray): A numpy array containing image data.
+        data_train_y (numpy.ndarray): A numpy array containing image labels.
+        class_names (list): A list of class names corresponding to the image labels.
 
     This function displays a visual inspection of 10 randomly selected images 
     from the provided dataset. It assumes that the images are grayscale and 
@@ -71,5 +73,6 @@ def inspect_data(Images,class_names):
         random_idx=random.randint(0,Images.shape[0])
         axs[i].imshow(Images[random_idx],cmap='gray') #I can remove cmap='gray' if I want to see the color images
         axs[i].axis('off')
-        axs[i].set_title(class_names[class_names[random_idx]])
+        axs[i].set_title(class_names[data_train_y[random_idx]])
+    plt.show()
     
