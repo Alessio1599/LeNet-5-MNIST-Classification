@@ -1,6 +1,8 @@
 #utils/utils_DL.py
 import matplotlib.pyplot as plt
 import numpy as np
+from models.model import build_lenet5
+from sklearn.metrics import confusion_matrix
 
 def plot_history(history,metric=None):
   """
@@ -27,6 +29,31 @@ def plot_history(history,metric=None):
     ax2.set_ylabel(metric,color=line2.get_color())
     ax2.tick_params(axis='y', labelcolor=line2.get_color())
     _=ax2.legend(loc='upper right')
+
+def train_model(train_x, train_y, val_x, val_y):
+  # Build and compile the model
+  model = build_lenet5()
+  model.summary()
+
+  model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+  # Train the model
+  history = model.fit(train_x, train_y, epochs=10, batch_size=64, validation_data=(val_x, val_y))
+  
+  # Plot of the training history
+  plot_history(history)
+
+  return model
+
+def evaluate_model(model, test_x, test_y, class_names):
+  # Evaluation of the model
+  test_loss, test_accuracy = model.evaluate(test_x, test_y)
+  print('Test loss: ', test_loss)
+  print('Test accuracy: ', test_accuracy)
+  
+  # Confusion matrix
+  y_pred = model.predict(test_x)
+  y_pred = np.argmax(y_pred, axis=1)
+  show_confusion_matrix(confusion_matrix(test_y, y_pred), class_names)
 
 def show_confusion_matrix(conf_matrix,class_names,figsize=(10,10)):
   fig, ax = plt.subplots(figsize=figsize)
