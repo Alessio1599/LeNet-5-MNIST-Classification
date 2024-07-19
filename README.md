@@ -26,6 +26,10 @@ This repository showcases a deep learning project implementing the LeNet-5 archi
     ```bash
     python main.py
     ```
+    Example of the use of flags
+    ```bash
+    python main.py --epochs=10 --batch_size=250
+    ```
 
 ## Directory structure
 ```
