@@ -70,7 +70,7 @@ def inspect_data(Images, data_train_y, class_names):
     image_count=10 # quante immagini visualizzare
     _, axs = plt.subplots(1, image_count,figsize=(15, 10))
     for i in range(image_count):
-        random_idx=random.randint(0,Images.shape[0])
+        random_idx=random.randint(0,Images.shape[0]-1)
         axs[i].imshow(Images[random_idx],cmap='gray') #I can remove cmap='gray' if I want to see the color images
         axs[i].axis('off')
         axs[i].set_title(class_names[data_train_y[random_idx]])

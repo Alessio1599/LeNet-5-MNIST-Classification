@@ -18,3 +18,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# Example of use
+# python main.py --epochs=10 --batch_size=250

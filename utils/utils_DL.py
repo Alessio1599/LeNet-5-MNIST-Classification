@@ -37,7 +37,7 @@ def train_model(train_x, train_y, val_x, val_y):
 
   model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
   # Train the model
-  history = model.fit(train_x, train_y, epochs=5, batch_size=64, validation_data=(val_x, val_y), verbose=1)
+  history = model.fit(train_x, train_y, epochs=5, batch_size=100, validation_data=(val_x, val_y), verbose=1)
   
   # Plot of the training history
   plot_history(history)
