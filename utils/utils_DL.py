@@ -1,7 +1,6 @@
 #utils/utils_DL.py
 import matplotlib.pyplot as plt
 import numpy as np
-from models.model import build_lenet5
 from sklearn.metrics import confusion_matrix
 
 import tensorflow as tf
@@ -9,20 +8,20 @@ from tensorflow import keras
 from keras import layers
 
 def build_lenet5(input_shape=(32, 32, 1), output_class_count=10):
-    model = keras.Sequential(
-        [
-            layers.Input(shape=input_shape, name='Input'),
-            layers.Conv2D(filters=6, kernel_size=5, strides=1, activation='tanh', padding='valid', name='C1'),
-            layers.AvgPool2D(pool_size=2, strides=2, name='S2'),
-            layers.Conv2D(filters=16, kernel_size=5, strides=1, activation='tanh', padding='valid', name='C3'),
-            layers.AvgPool2D(pool_size=2, strides=2, name='S4'),
-            layers.Conv2D(filters=120, kernel_size=5, strides=1, activation='tanh', padding='valid', name='C5'),
-            layers.Flatten(),
-            layers.Dense(84, activation='tanh', name='F6'),
-            layers.Dense(units=output_class_count, activation='softmax', name='Output')
-        ]
-    )
-    return model
+  model = keras.Sequential(
+    [
+      layers.Input(shape=input_shape, name='Input'),
+      layers.Conv2D(filters=6, kernel_size=5, strides=1, activation='tanh', padding='valid', name='C1'),
+      layers.AvgPool2D(pool_size=2, strides=2, name='S2'),
+      layers.Conv2D(filters=16, kernel_size=5, strides=1, activation='tanh', padding='valid', name='C3'),
+      layers.AvgPool2D(pool_size=2, strides=2, name='S4'),
+      layers.Conv2D(filters=120, kernel_size=5, strides=1, activation='tanh', padding='valid', name='C5'),
+      layers.Flatten(),
+      layers.Dense(84, activation='tanh', name='F6'),
+      layers.Dense(units=output_class_count, activation='softmax', name='Output')
+    ]
+  )
+  return model
 
 def train_model(train_x, train_y, val_x, val_y):
   # Build and compile the model
