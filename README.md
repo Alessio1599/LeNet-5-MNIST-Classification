@@ -35,15 +35,10 @@ This repository showcases a deep learning project implementing the LeNet-5 archi
 ```
 Deep-Learning/
 │
-├── models/
-│   └── model.py
-│
-├── preprocessing/
-│   └── preprocess.py
 │
 ├── utils/
 │   └── utils_DL.py
-│   └── utils_Images.py
+│   └── utils_data.py
 │
 ├── main.py
 ├── requirements.txt
