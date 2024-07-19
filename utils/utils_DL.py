@@ -30,7 +30,7 @@ def train_model(train_x, train_y, val_x, val_y):
 
   model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
   # Train the model
-  history = model.fit(train_x, train_y, epochs=5, batch_size=100, validation_data=(val_x, val_y), verbose=1)
+  history = model.fit(train_x, train_y, epochs=5, batch_size=1000, validation_data=(val_x, val_y), verbose=1)
   
   # Plot of the training history
   plot_history(history)
@@ -42,8 +42,7 @@ def print_training_summary(history):
   Prints the training summary including the hyperparameters and the loss function.
   """
   print("\nTraining Summary:")
-  print(f"Number of epochs: {len(history.epoch)}")
-  print(f"Batch size: {history.params['batch_size']}")
+  print(f"Number of epochs: {history.params['epochs']}")
   print(f"Optimizer: {history.model.optimizer._name}")
   print(f"Loss function: {history.model.loss}")
 
@@ -54,9 +53,11 @@ def evaluate_model(model, test_x, test_y, class_names):
   print('Test accuracy: ', test_accuracy)
   
   # Confusion matrix
-  y_pred = model.predict(test_x)
-  y_pred = np.argmax(y_pred, axis=1)
-  show_confusion_matrix(confusion_matrix(test_y, y_pred), class_names)
+  test_conf_pred=model.predict(test_x) # Predicted probabilities
+  test_y_pred=np.argsort(test_conf_pred,axis=1)[:,-1] # Predicted classes, the one with the highest probability
+  conf_matrix=confusion_matrix(test_y, test_y_pred, normalize='true')
+  show_confusion_matrix(conf_matrix, class_names)
+  print_training_summary(model.history)
 
 def plot_history(history,metric=None):
   """
@@ -97,3 +98,4 @@ def show_confusion_matrix(conf_matrix,class_names,figsize=(10,10)):
     for j in range(len(class_names)):
         text = ax.text(j, i, '{0:.1%}'.format(conf_matrix[i, j]),
                        ha='center', va='center', color='w')
+  plt.show()

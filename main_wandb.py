@@ -1,4 +1,5 @@
 import wandb
+from wandb.integration.keras import WandbCallback
 import tensorflow as tf
 from tensorflow import keras
 from absl import app, flags
@@ -8,8 +9,8 @@ from utils.utils_data import load_data, inspect_data, preprocess_data
 # Define hyperparameters as flags
 FLAGS = flags.FLAGS
 
-flags.DEFINE_integer('epochs', 10, 'Number of epochs to train the model')
-flags.DEFINE_integer('batch_size', 250, 'Batch size for training')
+flags.DEFINE_integer('epochs', 2, 'Number of epochs to train the model')
+flags.DEFINE_integer('batch_size', 500, 'Batch size for training')
 
 # Modified train_model function
 def train_model(train_x, train_y, val_x, val_y, epochs, batch_size):
@@ -31,8 +32,8 @@ def train_model(train_x, train_y, val_x, val_y, epochs, batch_size):
 
     return model, history
 
-
 def main(argv):
+    wandb.login()
     # Initialize wandb
     wandb.init(
         project="MNIST-CNN",
@@ -59,9 +60,11 @@ def main(argv):
 
     # Evaluate the model
     evaluate_model(model, test_x, test_y, class_names)
-
-    # Display the training history and hyperparameters
-    print_training_summary(history)
+    
+    wandb.finish()
 
 if __name__ == '__main_wandb__':
-    app.run(main_wandb)
+    app.run(main)
+
+# Example of use
+# python main_wandb.py --epochs=10 --batch_size=250
