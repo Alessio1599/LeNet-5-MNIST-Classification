@@ -1,4 +1,4 @@
-# Deep-Learning project
+# MNIST classification using LeNet5 model
 This repository showcases a deep learning project implementing the LeNet-5 architecture [LeCun et al., 1998]. The project utilizes the MNIST dataset to demonstrate LeNet-5's effectiveness in image classification.
 
 
@@ -33,7 +33,7 @@ This repository showcases a deep learning project implementing the LeNet-5 archi
 
 ## Directory structure
 ```
-Deep-Learning/
+LeNet-5-MNIST-Classification/
 │
 │
 ├── utils/
