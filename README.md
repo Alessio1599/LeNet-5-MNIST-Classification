@@ -1,4 +1,8 @@
-# Deep-Learning project
+# MNIST classification using LeNet5 model
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![Version](https://img.shields.io/badge/version-1.0-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 This repository showcases a deep learning project implementing the LeNet-5 architecture [LeCun et al., 1998]. The project utilizes the MNIST dataset to demonstrate LeNet-5's effectiveness in image classification.
 
 
@@ -26,20 +30,19 @@ This repository showcases a deep learning project implementing the LeNet-5 archi
     ```bash
     python main.py
     ```
+    Example of the use of flags
+    ```bash
+    python main.py --epochs=10 --batch_size=250
+    ```
 
 ## Directory structure
 ```
-Deep-Learning/
+LeNet-5-MNIST-Classification/
 │
-├── models/
-│   └── model.py
-│
-├── preprocessing/
-│   └── preprocess.py
 │
 ├── utils/
 │   └── utils_DL.py
-│   └── utils_Images.py
+│   └── utils_data.py
 │
 ├── main.py
 ├── requirements.txt
@@ -60,6 +63,11 @@ The utility functions help in visualizing the training process and evaluating th
 - `plot_history(history, metric)`: Plots the training and validation loss and metrics.
 - `show_confusion_matrix(conf_matrix, class_names)`: Displays the confusion matrix with class labels.
 - `Image_inspection(data)`: Displays 10 random images from the dataset.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 
 ## References
 [1] Y. LeCun, L. Bottou, Y. Bengio, and P. Haffner. "Gradient-based learning applied to document recognition." Proceedings of the IEEE, 86(11):2278-2324, November 1998

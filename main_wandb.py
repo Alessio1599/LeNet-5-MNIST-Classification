@@ -9,8 +9,8 @@ from utils.utils_data import load_data, inspect_data, preprocess_data
 # Define hyperparameters as flags
 FLAGS = flags.FLAGS
 
-flags.DEFINE_integer('epochs', 2, 'Number of epochs to train the model')
-flags.DEFINE_integer('batch_size', 500, 'Batch size for training')
+flags.DEFINE_integer('epochs', 12, 'Number of epochs to train the model')
+flags.DEFINE_integer('batch_size', 250, 'Batch size for training')
 
 # Modified train_model function
 def train_model(train_x, train_y, val_x, val_y, epochs, batch_size):
