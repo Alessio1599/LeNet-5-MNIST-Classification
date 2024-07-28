@@ -53,9 +53,9 @@ def evaluate_model(model, test_x, test_y, class_names):
   print('Test accuracy: ', test_accuracy)
   
   # Confusion matrix
-  test_conf_pred=model.predict(test_x) # Predicted probabilities
-  test_y_pred=np.argsort(test_conf_pred,axis=1)[:,-1] # Predicted classes, the one with the highest probability
-  conf_matrix=confusion_matrix(test_y, test_y_pred, normalize='true')
+  test_conf_pred = model.predict(test_x) # Predicted probabilities
+  test_y_pred = np.argsort(test_conf_pred,axis=1)[:,-1] # Predicted classes, the one with the highest probability
+  conf_matrix = confusion_matrix(test_y, test_y_pred, normalize='true')
   show_confusion_matrix(conf_matrix, class_names)
   print_training_summary(model.history)
 
@@ -65,7 +65,7 @@ def plot_history(history,metric=None):
   """
   fig, ax1 = plt.subplots(figsize=(10, 8))
 
-  epoch_count=len(history.history['loss'])
+  epoch_count = len(history.history['loss'])
 
   line1,=ax1.plot(range(1,epoch_count+1),history.history['loss'],label='train_loss',color='orange')
   ax1.plot(range(1,epoch_count+1),history.history['val_loss'],label='val_loss',color = line1.get_color(), linestyle = '--')
@@ -87,7 +87,7 @@ def plot_history(history,metric=None):
 
 def show_confusion_matrix(conf_matrix,class_names,figsize=(10,10)):
   fig, ax = plt.subplots(figsize=figsize)
-  img=ax.matshow(conf_matrix)
+  img = ax.matshow(conf_matrix)
   tick_marks = np.arange(len(class_names))
   _=plt.xticks(tick_marks, class_names,rotation=45)
   _=plt.yticks(tick_marks, class_names)

@@ -50,7 +50,7 @@ def main(argv):
     data_train_x, data_train_y, data_test_x, data_test_y, class_names = load_data()
     
     # Inspect the data
-    inspect_data(data_train_x, data_train_y, class_names)
+    #inspect_data(data_train_x, data_train_y, class_names)
 
     # Preprocess the data
     train_x, val_x, test_x, train_y, val_y, test_y = preprocess_data((data_train_x, data_train_y, data_test_x, data_test_y))
