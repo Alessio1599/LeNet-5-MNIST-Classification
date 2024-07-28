@@ -1,4 +1,8 @@
 # MNIST classification using LeNet5 model
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![Version](https://img.shields.io/badge/version-1.0-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 This repository showcases a deep learning project implementing the LeNet-5 architecture [LeCun et al., 1998]. The project utilizes the MNIST dataset to demonstrate LeNet-5's effectiveness in image classification.
 
 
