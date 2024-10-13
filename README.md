@@ -39,15 +39,19 @@ This repository showcases a deep learning project implementing the LeNet-5 archi
 ## Directory structure
 ```
 LeNet-5-MNIST-Classification/
-│
-│
-├── utils/
-│   └── utils_DL.py
-│   └── utils_data.py
-│
-├── main.py
-├── requirements.txt
-└── README.md
+├── LICENSE
+├── LeNet5-MNIST.ipynb
+├── README.md
+├── code
+│   ├── main.py
+│   ├── main_wandb.py
+│   └── utils
+│       ├── __pycache__
+│       │   ├── utils_DL.cpython-311.pyc
+│       │   └── utils_data.cpython-311.pyc
+│       ├── utils_DL.py
+│       └── utils_data.py
+└── requirements.txt
 ```
 
 ## Dataset

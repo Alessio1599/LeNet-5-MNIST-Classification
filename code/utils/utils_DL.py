@@ -43,7 +43,7 @@ def print_training_summary(history):
   """
   print("\nTraining Summary:")
   print(f"Number of epochs: {history.params['epochs']}")
-  print(f"Optimizer: {history.model.optimizer._name}")
+  print(f"Optimizer: {history.model.optimizer.name}")
   print(f"Loss function: {history.model.loss}")
 
 def evaluate_model(model, test_x, test_y, class_names):
