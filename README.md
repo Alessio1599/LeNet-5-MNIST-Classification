@@ -33,7 +33,7 @@ This repository showcases a deep learning project implementing the LeNet-5 archi
     ```
     Example of the use of flags
     ```bash
-    python main.py --epochs=10 --batch_size=250
+    python main_wandb.py --epochs=10 --batch_size=250
     ```
 
 ## Directory structure
