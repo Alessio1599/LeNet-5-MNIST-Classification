@@ -28,6 +28,7 @@ This repository showcases a deep learning project implementing the LeNet-5 archi
     ```
 3. Run the main script:
     ```bash
+    cd code
     python main.py
     ```
     Example of the use of flags
