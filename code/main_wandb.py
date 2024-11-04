@@ -3,8 +3,7 @@ from wandb.integration.keras import WandbCallback
 import tensorflow as tf
 from tensorflow import keras
 from absl import app, flags
-from utils.utils_DL import build_lenet5, evaluate_model, print_training_summary, plot_history
-from utils.utils_data import load_data, inspect_data, preprocess_data
+from util import load_data, inspect_data, preprocess_data, build_lenet5, evaluate_model, print_training_summary, plot_history
 
 # Define hyperparameters as flags
 FLAGS = flags.FLAGS

@@ -1,5 +1,4 @@
-from utils.utils_DL import train_model, evaluate_model
-from utils.utils_data import load_data, inspect_data, preprocess_data
+from util import load_data, inspect_data, preprocess_data, train_model, evaluate_model
 
 def main():
     data_train_x, data_train_y, data_test_x, data_test_y, class_names=load_data()
