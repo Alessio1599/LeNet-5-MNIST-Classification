@@ -1,7 +1,7 @@
 from util import load_data, inspect_data, preprocess_data, train_model, evaluate_model
 
 def main():
-    data_train_x, data_train_y, data_test_x, data_test_y, class_names=load_data()
+    data_train_x, data_train_y, data_test_x, data_test_y, class_names = load_data()
     
     # Inspect the data
     #inspect_data(data_train_x, data_train_y, class_names)
