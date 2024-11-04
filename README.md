@@ -45,12 +45,7 @@ LeNet-5-MNIST-Classification/
 ├── code
 │   ├── main.py
 │   ├── main_wandb.py
-│   └── utils
-│       ├── __pycache__
-│       │   ├── utils_DL.cpython-311.pyc
-│       │   └── utils_data.cpython-311.pyc
-│       ├── utils_DL.py
-│       └── utils_data.py
+│   └── util.py
 └── requirements.txt
 ```
 
