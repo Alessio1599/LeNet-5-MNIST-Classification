@@ -64,10 +64,6 @@ The utility functions help in visualizing the training process and evaluating th
 - `show_confusion_matrix(conf_matrix, class_names)`: Displays the confusion matrix with class labels.
 - `Image_inspection(data)`: Displays 10 random images from the dataset.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 
 ## References
 [1] Y. LeCun, L. Bottou, Y. Bengio, and P. Haffner. "Gradient-based learning applied to document recognition." Proceedings of the IEEE, 86(11):2278-2324, November 1998

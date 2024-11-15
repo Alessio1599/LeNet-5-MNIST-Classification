@@ -8,4 +8,6 @@
 
 
 ### Lab 2 CNN
-
+#### Steps
+- Load dataset
+- 
