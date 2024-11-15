@@ -2,8 +2,8 @@
 #### Summary
 - Aim: Classification of handwritten digits (0,..,9)
 - Dataset: MNIST images, 28x28
-- Data preprocessing
-- Results
+- Data preprocessing:
+- Results:
 
 
 ### Lab 2 CNN
