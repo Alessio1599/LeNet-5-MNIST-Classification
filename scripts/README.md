@@ -1,4 +1,4 @@
-
+For the moment this folder is not working
 
 #### Steps to Run train.py
 Navigate to the Project Folder: Open a terminal or command prompt and change the directory to where your train.py file is located.

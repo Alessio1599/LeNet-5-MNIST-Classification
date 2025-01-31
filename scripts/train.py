@@ -28,7 +28,7 @@ def train(config_path):
     # Callbacks
     callbacks = [
         keras.callbacks.EarlyStopping(patience=5, restore_best_weights=True),
-        keras.callbacks.ModelCheckpoint(filepath=os.path.join(save_dir, 'model-{epoch:02d}.h5')),
+        keras.callbacks.ModelCheckpoint(filepath=os.path.join(save_dir, 'model-{epoch:02d}.keras')),
         keras.callbacks.ReduceLROnPlateau(factor=0.2, patience=3, verbose=1)
     ]
 
@@ -42,7 +42,7 @@ def train(config_path):
     )
 
     # Save final model and history
-    model.save(os.path.join(save_dir, 'final_model.h5'))
+    model.save(os.path.join(save_dir, 'final_model.keras'))
     with open(os.path.join(save_dir, 'history.json'), 'w') as f:
         json.dump(history.history, f)
 
