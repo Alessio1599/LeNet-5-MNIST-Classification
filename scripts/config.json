@@ -1,0 +1,8 @@
+{
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "epochs": 50,
+    "save_dir": "./experiments",
+    "model_name": "lenet5",
+    "dataset": "mnist"
+}
